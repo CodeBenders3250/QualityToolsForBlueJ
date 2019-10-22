@@ -1,0 +1,9 @@
+Import bluej.extensions: 
+
+-Navigate to BlueJ 
+
+-Right click-Show Package Contents
+
+-Contents-Resources-Java
+
+-Copy: bluejext.jar to ExtensionTool classpath
