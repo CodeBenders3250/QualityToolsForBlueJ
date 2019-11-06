@@ -1,6 +1,13 @@
 import bluej.extensions.*;
 import bluej.extensions.event.*;
 import java.net.URL;
+import bluej.extensions.editor.*;
+
+
+
+import java.net.URL;
+import javax.swing.*;
+import java.awt.event.*;
 /**
  * 
  * TODO: Implement custom extension tool/s
@@ -56,61 +63,63 @@ public class ExtensionTool extends Extension implements PackageListener  {
     } 
                
     /*
-     * This method must decide if this Extension is compatible with the                
-     * current release of the BlueJ Extensions API
+     * Determine if extension works with current BlueJ Extensions API.
+     * 
      */
     public boolean isCompatible()
     { 
         return true; 
     }
-
+    
     /*
-     * Returns the version number of this extension
+     * Return the extension version.
      */
     public String getVersion ()
     { 
-        return ("2019.10"); 
+        return ("20191103"); 
     }
 
     /*
-     * Returns the user-visible name of this extension
+     * Return the name of the extension to the user.
      */
     public String getName ()
     { 
-        return ("<extension_name>"); 
+        return ("Extension_CodeBenders3250"); 
     }
-
+    /**
+     * Close extension.
+     */
     public void terminate()
     {
-        System.out.println ("<extension_name> terminates");
+        System.out.println ("Extension_CodeBenders3250 terminates");
     }
-               
+    
+    /**
+     * Return description of what the extension does.
+     */
     public String getDescription ()
     {
-        return ("<extension_description>");
+        return ("Extension_CodeBenders3250 adds CheckStyle functionality.");
     }
 
-    /*
-     * Returns a URL where you can find info on this extension.
-     * The real problem is making sure that the link will still be alive 
-     * in three years...
-     */
+   /**
+    * Return the URL of Github page containing additional info
+    * on this extenions functionality.
+    */
     public URL getURL ()
     {
         try
         {
-            return new URL("<extension_url>");
+            return new URL(
+            "https://github.com/CodeBenders3250/QualityToolsForBlueJ");
         }
         catch (Exception e )
         {
-            // The link is either dead or otherwise unreachable
-            System.out.println ("<extension_name>: getURL: Exception="+e.getMessage());
+            // Error message for URL link not working...
+            System.out.println ("ExtensionTool: getURL: Exception = "+
+                                e.getMessage());
             return null;
         }
-    }
-    public static void main(String[] args) {
-       
-
     }
 
 }
